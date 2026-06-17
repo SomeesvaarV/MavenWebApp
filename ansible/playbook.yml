@@ -1,0 +1,14 @@
+- name: Tomcat Deployment
+  hosts: web
+  become: true
+  tasks:
+    - name: Copy files to tomcat
+      copy:
+        src: "/var/snap/jenkins/5047/workspace/MavenAnsible1/target/MavenAnsible1/MavenAnsible1.war"
+        dest: "/opt/tomcat/webapps/MavenAnsible1.war"
+        remote_src: no
+    - name: Restart Tomcat
+      shell: |
+      	/opt/tomcat/bin/shutdown.sh || true
+      	sleep 5
+      	/opt/tomcat/bin/startup.sh 
