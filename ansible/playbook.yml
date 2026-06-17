@@ -1,6 +1,6 @@
 - name: Tomcat Deployment
   hosts: web
-  become: true
+  become: yes
   tasks:
     - name: Copy files to tomcat
       copy:
