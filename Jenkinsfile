@@ -11,7 +11,7 @@ pipeline{
 	stages{
 		stage('Checkout'){
 			steps{
-				git branch:'main', url:'https://github.com/SomeesvaarV/MavenAnsible1.git'
+				git branch:'main', url:'https://github.com/SomeesvaarV/MavenWebApp.git'
 			}
 		}
 		stage('Build'){
